@@ -224,6 +224,7 @@ var words = [
 	"lepel",
 	"links",
 	"laden",
+	"lesbi",
 	"leven",
 	"lezen",
 	"lucht",

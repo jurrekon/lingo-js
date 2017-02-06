@@ -1,0 +1,10 @@
+body{
+	width: 50%;
+	margin: auto;
+}
+table tr td{
+	border: solid black 1px;
+	border-collapse: collapse;
+	width: 30px;
+	height: 30px;
+}
