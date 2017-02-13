@@ -4,20 +4,33 @@ function randomWord(){
 	return rand;
 }
 
-var count = 1;
+var currentRow = 1;
+var row = 1;
 var letterAnswer = randomWord().split("");
-console.log(letterAnswer[0]);
 
-function check(){
+function checkLetters(){
+	var currentLetter = 1;
 	var input = document.getElementById("antwoord").value;
 	var letterInput = input.split("");
-	for (i = 0; i < 5; i++) {
-		if (letterAnswer[i] === letterInput[i]) {
-			console.log(letterAnswer[i] + "=" + letterInput[i]);
-			letterAnswer[i].appendTo(".row" + count + " .letter" + i);
-		}
-		else {
-			console.log(letterAnswer[i] + "!=" + letterInput[i]);
-		}
+
+	if (currentRow === 6) {
+		alert("stop");
+		return;
 	}
+
+	for (i = 0; i < 5; i++) {
+		document.getElementById(currentRow + '.' + currentLetter).innerHTML = letterInput[i];
+		if (letterAnswer[i] === letterInput[i]) {
+			document.getElementById(currentRow + '.' + currentLetter).style.background = "red";
+		}
+		else if(letterAnswer.includes(letterInput[i])) {
+			document.getElementById(currentRow + '.' + currentLetter).style.background = "yellow";
+		}
+		currentLetter++;
+	}
+	currentRow++;
+}
+
+function resetBoard(){
+	
 }

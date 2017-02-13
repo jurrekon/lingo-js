@@ -11,56 +11,44 @@
 	<h1>Hallo. Welkom bij lingo.</h1>
 	<p>Ik ben Luciel. Laten we beginnen.</p>
 
-	<input id="antwoord" type="text"/><button onclick="check()">antwoord</button>
+	<input id="antwoord" type="text"/><button onclick="checkLetters()">antwoord</button>
 
 	<table>
-		<tr class="row1">
-			<td class="letter1"></td>
-			<td class="letter2"></td>
-			<td class="letter3"></td>
-			<td class="letter4"></td>
-			<td class="letter5"></td>
+		<tr>
+			<td id="1.1"></td>
+			<td id="1.2"></td>
+			<td id="1.3"></td>
+			<td id="1.4"></td>
+			<td id="1.5"></td>
 		</tr>
-		<tr class="row2">
-			<td class="letter1"></td>
-			<td class="letter2"></td>
-			<td class="letter3"></td>
-			<td class="letter4"></td>
-			<td class="letter5"></td>
+		<tr>
+			<td id="2.1"></td>
+			<td id="2.2"></td>
+			<td id="2.3"></td>
+			<td id="2.4"></td>
+			<td id="2.5"></td>
 		</tr>
-		<tr class="row3">
-			<td class="letter1"></td>
-			<td class="letter2"></td>
-			<td class="letter3"></td>
-			<td class="letter4"></td>
-			<td class="letter5"></td>
+		<tr>
+			<td id="3.1"></td>
+			<td id="3.2"></td>
+			<td id="3.3"></td>
+			<td id="3.4"></td>
+			<td id="3.5"></td>
 		</tr>
-		<tr class="row4">
-			<td class="letter1"></td>
-			<td class="letter2"></td>
-			<td class="letter3"></td>
-			<td class="letter4"></td>
-			<td class="letter5"></td>
+		<tr>
+			<td id="4.1"></td>
+			<td id="4.2"></td>
+			<td id="4.3"></td>
+			<td id="4.4"></td>
+			<td id="4.5"></td>
 		</tr>
-		<tr class="row5">
-			<td class="letter1"></td>
-			<td class="letter2"></td>
-			<td class="letter3"></td>
-			<td class="letter4"></td>
-			<td class="letter5"></td>
+		<tr>
+			<td id="5.1"></td>
+			<td id="5.2"></td>
+			<td id="5.3"></td>
+			<td id="5.4"></td>
+			<td id="5.5"></td>
 		</tr>
 	</table>
-
-	<!-- automatisch woord kiezen -->
-
-	<!-- input voor woord -->
-
-	<!-- check of goed -->
-
-	<!-- als goed bal pakken -->
-
-	<!-- anders geen bal -->
-
-	<!-- add sound effect -->
 </body>
 </html>
