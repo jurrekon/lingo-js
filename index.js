@@ -1,22 +1,40 @@
-function randomWord(){
-	var rand = words[Math.floor(Math.random() * words.length)];
-	console.log(rand);
-	return rand;
-}
-
 var currentRow = 1;
 var row = 1;
-var letterAnswer = randomWord().split("");
+var rand;
+
+function randomWord(){
+	rand = words[Math.floor(Math.random() * words.length)];
+	console.log(rand);
+}
+randomWord();
+
+function giveFirstLetter(){
+	var letterAnswer = rand.split("");
+	document.getElementById("1.1").innerHTML = letterAnswer[0];
+}
+window.onload = giveFirstLetter;
 
 function checkLetters(){
 	var currentLetter = 1;
 	var input = document.getElementById("antwoord").value;
 	var letterInput = input.split("");
+	var letterAnswer = rand.split("");
 
-	if (currentRow === 6) {
-		alert("stop");
-		return;
-	}
+	setTimeout(function () {   
+        if(rand === input){
+			alert("U heeft het woord goed geraden! Gefeliciteerd! Begin opnieuw.");
+			resetBoard();
+			return;
+		}
+	}, 500)
+
+	setTimeout(function () {   
+        if (currentRow === 6) {
+			alert("U heeft al uw beurten gebruikt. Het juist woord was: " + rand.toUpperCase() + "! U begint nu opnieuw.");
+			resetBoard();
+			return;
+		}
+	}, 500)
 
 	for (i = 0; i < 5; i++) {
 		document.getElementById(currentRow + '.' + currentLetter).innerHTML = letterInput[i];
@@ -29,8 +47,19 @@ function checkLetters(){
 		currentLetter++;
 	}
 	currentRow++;
+
+	document.getElementById("antwoord").value = "";
+	document.getElementById("antwoord").select();
 }
 
 function resetBoard(){
-	
+	for(currentRow = 1; currentRow < 6; currentRow++) {
+		for(currentLetter = 1; currentLetter < 6; currentLetter++) {
+			document.getElementById(currentRow + '.' + currentLetter).innerHTML = "";
+			document.getElementById(currentRow + '.' + currentLetter).style.background = "white";
+		}
+	}
+	randomWord();
+	giveFirstLetter();
+	currentRow = 1;
 }

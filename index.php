@@ -13,7 +13,7 @@
 
 	<input id="antwoord" type="text"/><button onclick="checkLetters()">antwoord</button>
 
-	<table>
+	<table id="lingo_table">
 		<tr>
 			<td id="1.1"></td>
 			<td id="1.2"></td>
