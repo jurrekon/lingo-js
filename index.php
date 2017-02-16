@@ -8,11 +8,6 @@
 	<script type="text/javascript" src="index.js"></script>
 </head>
 <body>
-	<h1>Hallo. Welkom bij lingo.</h1>
-	<p>Ik ben Luciel. Laten we beginnen.</p>
-
-	<input id="antwoord" type="text"/><button onclick="checkLetters()">antwoord</button>
-
 	<table id="lingo_table">
 		<tr>
 			<td id="1.1"></td>
@@ -50,5 +45,7 @@
 			<td id="5.5"></td>
 		</tr>
 	</table>
+
+	<input id="antwoord" type="text"/><button onclick="checkLetters()">antwoord</button>
 </body>
 </html>

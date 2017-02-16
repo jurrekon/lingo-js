@@ -1,10 +1,27 @@
-body{
-	width: 50%;
-	margin: auto;
+body
+{
+	background-color: #2B5AFF;
 }
-table tr td{
+#lingo_table
+{
 	border: solid black 1px;
 	border-collapse: collapse;
-	width: 30px;
-	height: 30px;
+	text-align: center;
+	font-size: 120px;
+	background-color: #78C2FF;
+	margin: auto;
+	width: 50%;
+	height: 800px;
+	color: white;
+	font-family: calibri;
+}
+#lingo_table tr td
+{
+	width: 20%;
+	height: 20%;
+	border: solid grey 5px;
+}
+#antwoord
+{
+	margin-left: 25%;
 }

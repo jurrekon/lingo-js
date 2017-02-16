@@ -10,7 +10,7 @@ randomWord();
 
 function giveFirstLetter(){
 	var letterAnswer = rand.split("");
-	document.getElementById("1.1").innerHTML = letterAnswer[0];
+	document.getElementById("1.1").innerHTML = letterAnswer[0].toUpperCase();
 }
 window.onload = giveFirstLetter;
 
@@ -37,12 +37,12 @@ function checkLetters(){
 	}, 500)
 
 	for (i = 0; i < 5; i++) {
-		document.getElementById(currentRow + '.' + currentLetter).innerHTML = letterInput[i];
+		document.getElementById(currentRow + '.' + currentLetter).innerHTML = letterInput[i].toUpperCase();
 		if (letterAnswer[i] === letterInput[i]) {
-			document.getElementById(currentRow + '.' + currentLetter).style.background = "red";
+			document.getElementById(currentRow + '.' + currentLetter).style.background = "#FF492B";
 		}
 		else if(letterAnswer.includes(letterInput[i])) {
-			document.getElementById(currentRow + '.' + currentLetter).style.background = "yellow";
+			document.getElementById(currentRow + '.' + currentLetter).style.background = "#FFE600";
 		}
 		currentLetter++;
 	}
@@ -56,7 +56,7 @@ function resetBoard(){
 	for(currentRow = 1; currentRow < 6; currentRow++) {
 		for(currentLetter = 1; currentLetter < 6; currentLetter++) {
 			document.getElementById(currentRow + '.' + currentLetter).innerHTML = "";
-			document.getElementById(currentRow + '.' + currentLetter).style.background = "white";
+			document.getElementById(currentRow + '.' + currentLetter).style.background = "#78C2FF";
 		}
 	}
 	randomWord();
