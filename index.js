@@ -19,6 +19,13 @@ function checkLetters(){
 	var input = document.getElementById("antwoord").value;
 	var letterInput = input.split("");
 	var letterAnswer = rand.split("");
+	var copyLetterInput = letterInput;
+	var copyletterAnswer = letterAnswer;
+
+	if (input.length != 5) {
+		alert("Vul 5 letters in alstublieft!");
+		return;
+	}
 
 	setTimeout(function () {   
         if(rand === input){
@@ -40,13 +47,31 @@ function checkLetters(){
 		document.getElementById(currentRow + '.' + currentLetter).innerHTML = letterInput[i].toUpperCase();
 		if (letterAnswer[i] === letterInput[i]) {
 			document.getElementById(currentRow + '.' + currentLetter).style.background = "#FF492B";
-		}
-		else if(letterAnswer.includes(letterInput[i])) {
-			document.getElementById(currentRow + '.' + currentLetter).style.background = "#FFE600";
+			copyLetterInput[i] = "!";
+			copyletterAnswer[i] = "?";
 		}
 		currentLetter++;
 	}
-	currentRow++;
+
+	setTimeout(function () { 
+		currentLetter = 1;
+		for (i = 0; i < 5; i++) {
+			if(copyletterAnswer.includes(copyLetterInput[i])) {
+				document.getElementById(currentRow + '.' + currentLetter).style.background = "#FFE600";
+				for (y = 0; y < 5; y++) {
+					if(copyLetterInput[i] === copyletterAnswer[y]) {
+						copyletterAnswer[y] = "?";
+						break;
+					}
+				}
+			}
+			currentLetter++;
+		}
+	}, 10)
+	
+	setTimeout(function () { 
+		currentRow++;
+	}, 100)
 
 	document.getElementById("antwoord").value = "";
 	document.getElementById("antwoord").select();
