@@ -1,18 +1,53 @@
 var currentRow = 1;
 var row = 1;
 var rand;
+var amountOfLetters;
+var radios = document.getElementsByName('letterAmount');
+
+function letterAmount(){
+	for (var i = 0, length = radios.length; i < length; i++) {
+	    if (radios[i].checked) {
+	        amountOfLetters = radios[i].value;
+	        break;
+	    }
+	}
+}
+
+function createTable(){
+	for (i = 1; i < 6; i++) {
+		var extraRow = document.createElement("TR");
+		extraRow.id = i;
+		document.getElementById("lingo_table").appendChild(extraRow);
+		for (d = 1; d <= amountOfLetters; d++) {
+			var extraLetter = document.createElement("TD");
+			extraLetter.id = i + "." + d;
+			document.getElementById(i).appendChild(extraLetter);
+		}
+	}
+	randomWord();
+	giveFirstLetter();
+}
 
 function randomWord(){
-	rand = words[Math.floor(Math.random() * words.length)];
-	console.log(rand);
+	if (amountOfLetters == 5) {
+		rand = words_5[Math.floor(Math.random() * words_5.length)];
+		console.log(rand);
+	} else if (amountOfLetters == 6) {
+		rand = words_6[Math.floor(Math.random() * words_6.length)];
+		console.log(rand);
+	} else if (amountOfLetters == 7) {
+		rand = words_7[Math.floor(Math.random() * words_7.length)];
+		console.log(rand);
+	}  else if (amountOfLetters == 8) {
+		rand = words_8[Math.floor(Math.random() * words_8.length)];
+		console.log(rand);
+	}
 }
-randomWord();
 
 function giveFirstLetter(){
 	var letterAnswer = rand.split("");
 	document.getElementById("1.1").innerHTML = letterAnswer[0].toUpperCase();
 }
-window.onload = giveFirstLetter;
 
 function checkLetters(){
 	var currentLetter = 1;
@@ -22,8 +57,8 @@ function checkLetters(){
 	var copyLetterInput = letterInput;
 	var copyletterAnswer = letterAnswer;
 
-	if (input.length != 5) {
-		alert("Vul 5 letters in alstublieft!");
+	if (input.length != amountOfLetters) {
+		alert("Vul " + amountOfLetters + " letters in alstublieft!");
 		return;
 	}
 
@@ -43,7 +78,7 @@ function checkLetters(){
 		}
 	}, 500)
 
-	for (i = 0; i < 5; i++) {
+	for (i = 0; i < amountOfLetters; i++) {
 		document.getElementById(currentRow + '.' + currentLetter).innerHTML = letterInput[i].toUpperCase();
 		if (letterAnswer[i] === letterInput[i]) {
 			document.getElementById(currentRow + '.' + currentLetter).style.background = "#FF492B";
@@ -55,10 +90,10 @@ function checkLetters(){
 
 	setTimeout(function () { 
 		currentLetter = 1;
-		for (i = 0; i < 5; i++) {
+		for (i = 0; i < amountOfLetters; i++) {
 			if(copyletterAnswer.includes(copyLetterInput[i])) {
 				document.getElementById(currentRow + '.' + currentLetter).style.background = "#FFE600";
-				for (y = 0; y < 5; y++) {
+				for (y = 0; y < amountOfLetters; y++) {
 					if(copyLetterInput[i] === copyletterAnswer[y]) {
 						copyletterAnswer[y] = "?";
 						break;
@@ -78,13 +113,6 @@ function checkLetters(){
 }
 
 function resetBoard(){
-	for(currentRow = 1; currentRow < 6; currentRow++) {
-		for(currentLetter = 1; currentLetter < 6; currentLetter++) {
-			document.getElementById(currentRow + '.' + currentLetter).innerHTML = "";
-			document.getElementById(currentRow + '.' + currentLetter).style.background = "#78C2FF";
-		}
-	}
-	randomWord();
-	giveFirstLetter();
+	document.getElementById("lingo_table").innerHTML = "";
 	currentRow = 1;
 }

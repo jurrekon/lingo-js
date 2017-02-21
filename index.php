@@ -8,43 +8,20 @@
 	<script type="text/javascript" src="index.js"></script>
 </head>
 <body>
-	<table id="lingo_table">
-		<tr>
-			<td id="1.1"></td>
-			<td id="1.2"></td>
-			<td id="1.3"></td>
-			<td id="1.4"></td>
-			<td id="1.5"></td>
-		</tr>
-		<tr>
-			<td id="2.1"></td>
-			<td id="2.2"></td>
-			<td id="2.3"></td>
-			<td id="2.4"></td>
-			<td id="2.5"></td>
-		</tr>
-		<tr>
-			<td id="3.1"></td>
-			<td id="3.2"></td>
-			<td id="3.3"></td>
-			<td id="3.4"></td>
-			<td id="3.5"></td>
-		</tr>
-		<tr>
-			<td id="4.1"></td>
-			<td id="4.2"></td>
-			<td id="4.3"></td>
-			<td id="4.4"></td>
-			<td id="4.5"></td>
-		</tr>
-		<tr>
-			<td id="5.1"></td>
-			<td id="5.2"></td>
-			<td id="5.3"></td>
-			<td id="5.4"></td>
-			<td id="5.5"></td>
-		</tr>
-	</table>
+	<p>Kies hier het aantal letters!</p>
+	<input type="radio" name="letterAmount" value="5">5
+	<br/>
+	<input type="radio" name="letterAmount" value="6">6
+	<br/>
+	<input type="radio" name="letterAmount" value="7">7
+	<br/>
+	<input type="radio" name="letterAmount" value="8">8
+	<br/>
+	<br/>
+	<button onclick="letterAmount();createTable();">letters</button>
+	<br/>
+
+	<table id="lingo_table"></table>
 
 	<input id="antwoord" type="text"/><button onclick="checkLetters()">antwoord</button>
 </body>

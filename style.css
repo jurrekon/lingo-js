@@ -1,27 +1,25 @@
 body
 {
 	background-color: #2B5AFF;
+	color: white;
+	font-family: calibri;
 }
 #lingo_table
 {
 	border: solid black 1px;
 	border-collapse: collapse;
 	text-align: center;
-	font-size: 120px;
+	font-size: 40px;
 	background-color: #78C2FF;
 	margin: auto;
-	width: 50%;
-	height: 800px;
-	color: white;
-	font-family: calibri;
 }
 #lingo_table tr td
 {
-	width: 20%;
-	height: 20%;
+	width: 100px;
+	height: 100px;
 	border: solid grey 5px;
 }
 #antwoord
 {
-	margin-left: 25%;
+	margin-left: calc(50% - 121px);
 }
