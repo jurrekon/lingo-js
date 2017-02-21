@@ -26,6 +26,7 @@ function createTable(){
 	}
 	randomWord();
 	giveFirstLetter();
+	document.getElementById("letter").disabled = true;
 }
 
 function randomWord(){
@@ -115,4 +116,5 @@ function checkLetters(){
 function resetBoard(){
 	document.getElementById("lingo_table").innerHTML = "";
 	currentRow = 1;
+	document.getElementById("letter").disabled = false;
 }

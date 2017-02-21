@@ -18,7 +18,7 @@
 	<input type="radio" name="letterAmount" value="8">8
 	<br/>
 	<br/>
-	<button onclick="letterAmount();createTable();">letters</button>
+	<button onclick="letterAmount();createTable();" id="letter">letters</button>
 	<br/>
 
 	<table id="lingo_table"></table>
