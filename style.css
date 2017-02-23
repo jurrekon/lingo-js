@@ -1,8 +1,12 @@
 body
 {
-	background-color: #2B5AFF;
-	color: white;
+	background-color: #E5E2DD;
 	font-family: calibri;
+	font-size: 22px;
+}
+.letter_block, h1, p
+{
+	margin-left: 20px;
 }
 #lingo_table
 {
